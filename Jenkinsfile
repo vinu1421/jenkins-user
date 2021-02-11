@@ -11,5 +11,8 @@ def existingUser = instance.securityRealm.allUsers.find {it.id == userId}
 if (existingUser == null) {
     def user = instance.securityRealm.createAccount(userId, password)
     user.setFullName(fullname)
+    echo 'user created successfully'
 
-} 
+} else {
+    echo 'User already present'
+}
