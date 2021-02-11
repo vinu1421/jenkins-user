@@ -1,8 +1,8 @@
 import hudson.model.*
 import hudson.security.*
 
-def userId = sathu
-def password = sathu123
+def userId = 'sathu'
+def password = 'sathu123'
 
 def instance = jenkins.model.Jenkins.instance
 
