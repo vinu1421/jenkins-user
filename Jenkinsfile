@@ -24,10 +24,18 @@ def checkoutRepo(){
 	}
 }
 
+action = ${ACTION}
+username = ${USERNAME}
 node(){
-    stage(ManageJenkins){
-        if (${ACTION} == 'Create_JenkinsUser') {
-            echo "${ACTION} its working"
+    stage('ManageJenkins'){
+        if (action == 'Create_JenkinsUser') {
+            if (username){
+                echo "${username} its working"
+            } else {
+                echo "username is empty"
+
+            }
+            
         }
 
 
