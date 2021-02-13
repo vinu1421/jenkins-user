@@ -6,6 +6,7 @@ properties([
  parameters([
  choice(choices: ['Donothing', 'Create_JenkinsUser', 'Reset_UserPassword', 'Update_JenkinsRoles', 'Update_JenkinsUsers'],
  description: 'Choose your action', name: 'ACTION'),
+ string(defaultValue: '', description: 'Enter username', name: 'UserID', trim: false),
  string(defaultValue: '', description: 'Enter username', name: 'USERNAME', trim: false)
  ])
 ])
@@ -24,13 +25,13 @@ def checkoutRepo(){
 	}
 }
 
-def managejenkins(String pAction, String pUsername){
+def managejenkins(String pAction, String pUserID, String pUsername){
 
 node(){
     stage('ManageJenkins'){
         if (pAction == 'Create_JenkinsUser') {
-            if (pUsername){
-                List user = pUsername.split(',')
+            if (pUserID){
+                List user = pUserID.split(',')
                 for (int i = 0; i < user.size(); i++) {
 		         def allChars = [ 'A'..'Z', 'a'..'z', '0'..'9' ].flatten() - [ 'O', '0', 'l', '1', 'I' ]
                  def password = ""
@@ -43,7 +44,9 @@ node(){
                  def existingUser = instance.securityRealm.allUsers.find {it.id == user[i]}
                  if (existingUser == null) {
                      def username = instance.securityRealm.createAccount(user[i], password)
-                     username.setFullName(fullname)
+                     if (pUsername) {
+                        username.setFullName(pUsername)
+                        }
                      echo 'user created successfully'
                     } else {
                      echo 'User already present'
@@ -59,4 +62,4 @@ node(){
 }
 }
 
-managejenkins("${ACTION}", "${USERNAME}")
+managejenkins("${ACTION}", "${UserID}", "${USERNAME}")
