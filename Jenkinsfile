@@ -39,7 +39,7 @@ node(){
                  (0..<length).collect { password = password + allChars[ new Random().nextInt( allChars.size() ) ] }
                  }
                  generatePassword(15)
-                 echo "Reseting password for ${user[i]}"
+                 echo "Creating user ${user[i]}"
                  def instance = jenkins.model.Jenkins.instance
                  def existingUser = instance.securityRealm.allUsers.find {it.id == user[i]}
                  if (existingUser == null) {
@@ -47,9 +47,9 @@ node(){
                      if (pUsername) {
                         username.setFullName(pUsername)
                         }
-                     echo 'user created successfully'
+                     echo "${user[i]} user created successfully, Password is ${password}"
                     } else {
-                     echo 'User already present'
+                     echo "${user[i]} User already present in jenkins"
                     }
                 }
             } else {
