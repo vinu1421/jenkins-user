@@ -1,0 +1,646 @@
+{
+    "present":
+    [
+        {
+            "name": "C4-DB",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Overall": {
+                    "Read": "true"
+                },
+                "Job": {
+                    "Read": "true"
+                },
+                "View": {
+                    "Read": "true"
+                }
+            }
+        },
+
+        {
+            "name": "C4-Ops",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Overall": {
+                    "Read": "true",
+                    "RunScripts": "true",
+                    "UploadPlugins": "true"
+                },
+                "Credentials": {
+                    "Create": "true",
+                    "View": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Configure": "true",
+                    "Create": "true",
+                    "Discover": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Replay": "true",
+                    "Update": "true"
+                },
+                "View": {
+                    "Create": "true",
+                    "Read": "true"
+                },
+                "SCM": {
+                    "Tag": "true"
+                }
+            }
+        },
+
+        {
+            "name": "C4-ReadOnly",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Overall": {
+                    "Read": "true"
+                },
+                "Job": {
+                    "Read": "true"
+                },
+                "View": {
+                    "Read": "true"
+                }
+            }
+
+        },
+
+        {
+            "name": "Coherence",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+            }
+
+        },
+
+        {
+            "name": "Jboss",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Overall": {
+                    "Read": "true"
+                },
+                "Credentials": {
+                    "View": "true"
+                }
+            }
+        },
+
+        {
+            "name": "SFRestart",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Job": {
+                    "Read": "true"
+                }
+            }
+        },
+
+        {
+            "name": "SM_Automation",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Job": {
+                    "Read": "true"
+                }
+            }
+        },
+
+        {
+            "name": "admin1",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Overall": {
+                    "Administer" : "true",
+                    "ConfigureUpdateCenter": "true",
+                    "Read": "true",
+                    "RunScripts": "true",
+                    "UploadPlugins": "true"
+                },
+                "Credentials": {
+                    "Create": "true",
+                    "Delete": "true",
+                    "ManageDomains": "true",
+                    "Update": "true",
+                    "View": "true"
+                },
+                "Agent": {
+                    "Build": "true",
+                    "Configure": "true",
+                    "Connect": "true",
+                    "Create": "true",
+                    "Delete": "true",
+                    "Disconnect": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Configure": "true",
+                    "Create": "true",
+                    "Delete": "true",
+                    "Discover": "true",
+                    "Move": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Delete": "true",
+                    "Replay": "true",
+                    "Update": "true"
+                },
+                "View": {
+                    "Configure": "true",
+                    "Create": "true",
+                    "Delete": "true",
+                    "Read": "true"
+                },
+                "SCM": {
+                    "Tag": "true"
+                }
+
+            }        
+        },
+
+        {
+            "name": "escalation",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Job": {
+                    "Build": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                }
+            }
+        },
+
+        {
+            "name": "jenkins_queue",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Overall": {
+                    "Read": "true"
+                }
+            }
+        },
+
+        {
+            "name": "launcher",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Overall": {
+                    "Read": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "View": {
+                    "Read": "true"
+                },
+                "SCM": {
+                    "Tag": "true"
+                }
+            }
+        },
+
+        {
+            "name": "login",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Overall": {
+                    "Read": "true"
+                },
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "View": {
+                    "Read": "true"
+                }         
+
+            }    
+        },
+
+        {
+            "name": "threaddump",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Job": {
+                    "Read": "true"
+                }           
+            }       
+        },
+
+        {
+            "name": "viewer",
+            "pattern": "None",
+            "relm": "globalRoles",
+            "role": {
+                "Overall": {
+                    "Read": "true"
+                },
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "View": {
+                    "Read": "true"
+                }
+            }
+
+        },
+
+        {
+            "name": "AtuinDumps",
+            "pattern": "PROD-ATUIN-.*Dump",
+            "relm": "projectRoles",
+            "role": {
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Replay": "true"
+                }
+            }
+        },
+
+        {
+            "name": "BatchRestart",
+            "pattern": "Daily_Batch_Restart",
+            "relm": "projectRoles",
+            "role": {
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Replay": "true"
+                }
+            }
+        },
+
+        {
+            "name": "BuildJobs",
+            "pattern": "BUILD-.*",
+            "relm": "projectRoles",
+            "role": {
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Discover": "true",
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Update": "true"
+                }
+            }
+        },
+
+        {
+            "name": "Coherence",
+            "pattern": "PROD-COH-.*",
+            "relm": "projectRoles",
+            "role": {
+                "Job": {
+                    "Build": "true"
+                }
+            }
+        },
+
+        {
+            "name": "CorFood",
+            "pattern": ".*-COR",
+            "relm": "projectRoles",
+            "role": {
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Discover": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Update": "true"
+                }
+            }
+        },
+
+        {
+            "name": "Db",
+            "pattern": "SOLICITUD.*",
+            "relm": "projectRoles",
+            "role": {
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Replay": "true"
+                }
+            }
+        },
+
+        {
+            "name": "Indexing",
+            "pattern": ".*Index.*",
+            "relm": "projectRoles",
+            "role": {
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Replay": "true"
+                }
+            }
+        },
+
+        {
+            "name": "NoProdJobs",
+            "pattern": "NOPROD-.*",
+            "relm": "projectRoles",
+            "role": {
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Discover": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Update": "true"
+                }
+            }
+        },
+
+        {
+            "name": "OpsUserPermissions",
+            "pattern": ".*",
+            "relm": "projectRoles",
+            "role": {
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Configure": "true",
+                    "Move": "true",
+                    "Cancel": "true",
+                    "Create": "true",
+                    "Discover": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Replay": "true",
+                    "Update": "true"
+                },
+                "SCM": {
+                    "Tag": "true"
+                }
+            }
+        },
+
+        {
+            "name": "PIM",
+            "pattern": "NF_PROD_PIM_Start",
+            "relm": "projectRoles",
+            "role": {
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true"
+                },
+                "Run": {
+                    "Replay": "true"
+                }
+            }
+            
+        },
+
+        {
+            "name": "PRODNF-RestartJbos",
+            "pattern": "PRODNF-RestartJbossC4NonFoodPRO",
+            "relm": "projectRoles",
+            "role": {
+
+            }
+        },
+
+        {
+            "name": "PreviewJobs",
+            "pattern": "PREVIEW-.*",
+            "relm": "projectRoles",
+            "role": {
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Discover": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Update": "true"
+                }
+            }
+        },
+
+        {
+            "name": "ProdFJobs",
+            "pattern": "PRODF-.*",
+            "relm": "projectRoles",
+            "role": {
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Discover": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Update": "true"
+                }
+            }
+        },
+
+        {
+            "name": "ProdJobs",
+            "pattern": "PROD-.*",
+            "relm": "projectRoles",
+            "role": {
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Discover": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Update": "true"
+                }
+            }
+        },
+
+        {
+            "name": "ProdNFJobs",
+            "pattern": "PRODNF-.*",
+            "relm": "projectRoles",
+            "role": {
+                "Credentials": {
+                    "View": "true"
+                },
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Discover": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Update": "true"
+                }
+            }
+        },
+
+        {
+            "name": "SFRestart",
+            "pattern": ".*StoreFront_Restart_On_AjpRejectedCount",
+            "relm": "projectRoles",
+            "role": {            
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Replay": "true"
+                }
+            }
+        },
+
+        {
+            "name": "SM_Automation",
+            "pattern": ".*HPSM_Automation",
+            "relm": "projectRoles",
+            "role": {            
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Replay": "true"
+                }
+            }
+        },
+
+        {
+            "name": "TagGitRepository",
+            "pattern": "TAGREPO-.*",
+            "relm": "projectRoles",
+            "role": {            
+                "Job": {
+                    "Build": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "SCM": {
+                    "Tag": "true"
+                }
+            }
+        },
+
+        {
+            "name": "escalation",
+            "pattern": "Prod_*_.*",
+            "relm": "projectRoles",
+            "role": {            
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Update": "true"
+                }
+            }
+        },
+
+        {
+            "name": "threaddump",
+            "pattern": "PRODNF-ThreadDumpJbossC4NonFoodPRO"	,
+            "relm": "projectRoles",
+            "role": {            
+                "Job": {
+                    "Build": "true",
+                    "Cancel": "true",
+                    "Read": "true",
+                    "Workspace": "true"
+                },
+                "Run": {
+                    "Update": "true"
+                }
+            }
+        }    
+        
+    ],
+
+    "absent": []
+}
