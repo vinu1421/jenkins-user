@@ -27,7 +27,7 @@ def checkoutRepo(){
 
 def managejenkins(String pAction, String pUserID, String pUsername){
 
-def password_generate(){
+ def password_generate(){
     def allChars = [ 'A'..'Z', 'a'..'z', '0'..'9' ].flatten() - [ 'O', '0', 'l', '1', 'I' ]
     def password = ""
     def generatePassword = { length ->
@@ -36,7 +36,7 @@ def password_generate(){
     generatePassword(15)
     return password
 
-}
+ }
 
 node(){
     stage('ManageJenkins'){
