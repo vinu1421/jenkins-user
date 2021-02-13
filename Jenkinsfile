@@ -31,6 +31,7 @@ def managejenkins(String pAction, String pUserID, String pUsername){
 node(){
     stage('ManageJenkins'){
         def allChars = [ 'A'..'Z', 'a'..'z', '0'..'9' ].flatten() - [ 'O', '0', 'l', '1', 'I' ]
+        def password = ""
         def generatePassword = { length ->
          (0..<length).collect { password = password + allChars[ new Random().nextInt( allChars.size() ) ] }
          }
