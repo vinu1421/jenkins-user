@@ -27,39 +27,44 @@ def checkoutRepo(){
 
 def managejenkins(String pAction, String pUserID, String pUsername){
 
-node(){
-    stage('ManageJenkins'){
-        if (pAction == 'Create_JenkinsUser') {
-            if (pUserID){
-                List user = pUserID.split(',')
-                for (int i = 0; i < user.size(); i++) {
-		         def allChars = [ 'A'..'Z', 'a'..'z', '0'..'9' ].flatten() - [ 'O', '0', 'l', '1', 'I' ]
-                 def password = ""
-                 def generatePassword = { length ->
-                 (0..<length).collect { password = password + allChars[ new Random().nextInt( allChars.size() ) ] }
-                 }
-                 generatePassword(15)
-                 def instance = jenkins.model.Jenkins.instance
-                 def existingUser = instance.securityRealm.allUsers.find {it.id == user[i]}
-                 if (existingUser == null) {
-                     echo "Creating user ${user[i]}"
-                     def username = instance.securityRealm.createAccount(user[i], password)
-                     if (pUsername) {
-                        username.setFullName(pUsername)
-                        }
-                     echo "${user[i]} user created successfully, Password is ${password}"
-                    } else {
-                     echo "${user[i]} User already present in jenkins"
-                    }
-                }
-            } else {
-                echo "username is empty"
-
+    def password_generate(){
+        def allChars = [ 'A'..'Z', 'a'..'z', '0'..'9' ].flatten() - [ 'O', '0', 'l', '1', 'I' ]
+        def password = ""
+        def generatePassword = { length ->
+        (0..<length).collect { password = password + allChars[ new Random().nextInt( allChars.size() ) ] }
             }
-            
+        generatePassword(15)
+        return password
+
+    }
+
+    node(){
+        stage('ManageJenkins'){
+            if (pAction == 'Create_JenkinsUser') {
+                if (pUserID){
+                    List user = pUserID.split(',')
+                    def password = password_generate()
+                    def instance = jenkins.model.Jenkins.instance
+                    def existingUser = instance.securityRealm.allUsers.find {it.id == user[i]}
+                    if (existingUser == null) {
+                        echo "Creating user ${user[i]}"
+                        def username = instance.securityRealm.createAccount(user[i], password)
+                        if (pUsername) {
+                            username.setFullName(pUsername)
+                            }
+                        echo "${user[i]} user created successfully, Password is ${password}"
+                        } else {
+                        echo "${user[i]} User already present in jenkins"
+                        }
+                    }
+                } else {
+                    echo "username is empty"
+
+                }
+                
+            }
         }
     }
-}
 }
 
 managejenkins("${ACTION}", "${UserID}", "${USERNAME}")
