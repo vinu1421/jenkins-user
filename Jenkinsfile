@@ -15,7 +15,7 @@ properties([
             description: 'Choose an action to perform',
             editable: false,
             name: 'ACTION'
-         ]
+         ],
          string(defaultValue: '', description: 'Enter the username', name: 'USERNAME', trim: false)
 
          
