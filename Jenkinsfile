@@ -2,25 +2,12 @@ import hudson.model.*
 import hudson.security.*
 
 properties([
-    [$class: 'JiraProjectProperty'],
-    
-     parameters([
-
-         [
-            $class: 'ExtensibleChoiceParameterDefinition',
-            choiceListProvider: [$class: 'TextareaChoiceListProvider',
-            addEditedValue: false,
-            choiceListText: '''Donothing\nUpdate_JenkinsRoles\nUpdate_JenkinsUsers''',
-            defaultChoice: 'Donothing'],
-            description: 'Choose an action to perform',
-            editable: false,
-            name: 'ACTION'
-         ],
-         string(defaultValue: '', description: 'Enter the username', name: 'USERNAME', trim: false)
-
-         
-
-    ])    
+ [$class: 'JiraProjectProperty'],
+ parameters([
+ choice(choices: ['Donothing', 'Create_JenkinsUser', 'Reset_UserPassword', 'Update_JenkinsRoles', 'Update_JenkinsUsers'],
+ description: 'Choose your action', name: 'ACTION'),
+ string(defaultValue: '', description: 'Enter username', name: 'USERNAME', trim: false)
+ ])
 ])
 
 def checkoutRepo(){
@@ -35,7 +22,7 @@ def checkoutRepo(){
         
         ])
 	}
-'''
+
 def userId = 'sathu'
 def password = 'sathu123'
 def fullname = 'sathvik vinayak'
@@ -51,4 +38,3 @@ if (existingUser == null) {
 } else {
     echo 'User already present'
 }
-'''
