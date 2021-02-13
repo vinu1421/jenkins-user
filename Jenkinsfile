@@ -60,13 +60,24 @@ node(){
                     }
                 }
             } else {
-                echo "username is empty"
+                echo "ERROR - userid is empty"
 
             }
             
+        } else if (pAction == 'Reset_UserPassword') {
+            if (pUserID){
+                List user = pUserID.split(',')
+                for (int i = 0; i < user.size(); i++) {
+                    def password = GenerateRandomPassword()
+                    def instance = jenkins.model.Jenkins.instance
+                    echo "Resetting password for user ${user[i]}"
+                    def username = instance.securityRealm.createAccount(user[i], password)
+                    echo "Password reset successful for the user ${user[i]}, new password is ${password}"
+                }
+            } else {
+                echo "ERROR - userid is empty"
+            }
         }
-    }
-}
 }
 
 managejenkins("${ACTION}", "${UserID}", "${USERNAME}")
