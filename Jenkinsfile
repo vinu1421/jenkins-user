@@ -42,8 +42,8 @@ node(){
                  def instance = jenkins.model.Jenkins.instance
                  def existingUser = instance.securityRealm.allUsers.find {it.id == user[i]}
                  if (existingUser == null) {
-                     def user = instance.securityRealm.createAccount(user[i], password)
-                     user.setFullName(fullname)
+                     def username = instance.securityRealm.createAccount(user[i], password)
+                     username.setFullName(fullname)
                      echo 'user created successfully'
                     } else {
                      echo 'User already present'
