@@ -24,3 +24,22 @@ def checkoutRepo(){
 	}
 }
 
+node(){
+    stage(ManageJenkins){
+        if (${ACTION} == 'Create_JenkinsUser') {
+            echo "${ACTION} its working"
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+
+}
+
