@@ -15,12 +15,26 @@ properties([
             description: 'Choose an action to perform',
             editable: false,
             name: 'ACTION'
-         ]    
+         ]
+         string(defaultValue: '', description: 'Enter the username', name: 'USERNAME', trim: false)
 
          
 
     ])    
-]) 
+])
+
+def checkoutRepo(){
+
+	stage('Checkout Repo') {
+		checkout([$class: 'GitSCM', 
+        branches: [[name: '*/script-branch']], 
+        doGenerateSubmoduleConfigurations: false, 
+        extensions: [], 
+        submoduleCfg: [], 
+        userRemoteConfigs: [[credentialsId: '918483d2-a278-43f7-8618-1dc618466dfc', url: 'https://github.com/vinu1421/jenkins-user.git']]
+        
+        ])
+	}
 '''
 def userId = 'sathu'
 def password = 'sathu123'
