@@ -80,5 +80,6 @@ node(){
         }
     }
 }
+}
 
 managejenkins("${ACTION}", "${UserID}", "${USERNAME}")
