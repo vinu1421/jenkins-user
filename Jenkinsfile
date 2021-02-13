@@ -1,6 +1,27 @@
 import hudson.model.*
 import hudson.security.*
 
+properties([
+    [$class: 'JiraProjectProperty'],
+    
+     parameters([
+
+         [
+            $class: 'ExtensibleChoiceParameterDefinition',
+            choiceListProvider: [$class: 'TextareaChoiceListProvider',
+            addEditedValue: false,
+            choiceListText: '''Donothing\nUpdate_JenkinsRoles\nUpdate_JenkinsUsers''',
+            defaultChoice: 'Donothing'],
+            description: 'Choose an action to perform',
+            editable: false,
+            name: 'ACTION'
+         ]    
+
+         
+
+    ])    
+]) 
+'''
 def userId = 'sathu'
 def password = 'sathu123'
 def fullname = 'sathvik vinayak'
@@ -16,3 +37,4 @@ if (existingUser == null) {
 } else {
     echo 'User already present'
 }
+'''
