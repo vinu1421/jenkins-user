@@ -39,10 +39,10 @@ node(){
                  (0..<length).collect { password = password + allChars[ new Random().nextInt( allChars.size() ) ] }
                  }
                  generatePassword(15)
-                 echo "Creating user ${user[i]}"
                  def instance = jenkins.model.Jenkins.instance
                  def existingUser = instance.securityRealm.allUsers.find {it.id == user[i]}
                  if (existingUser == null) {
+                     echo "Creating user ${user[i]}"
                      def username = instance.securityRealm.createAccount(user[i], password)
                      if (pUsername) {
                         username.setFullName(pUsername)
