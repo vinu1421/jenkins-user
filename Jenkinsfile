@@ -78,6 +78,7 @@ node(){
                 echo "ERROR - userid is empty"
             }
         }
+    }
 }
 
 managejenkins("${ACTION}", "${UserID}", "${USERNAME}")
