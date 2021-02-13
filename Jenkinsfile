@@ -24,30 +24,21 @@ def checkoutRepo(){
 	}
 }
 
-action = ${ACTION}
-username = ${USERNAME}
+def managejenkins(String pAction, String pUsername){
+
 node(){
     stage('ManageJenkins'){
-        if (action == 'Create_JenkinsUser') {
-            if (username){
-                echo "${username} its working"
+        if (pAction == 'Create_JenkinsUser') {
+            if (pUsername){
+                echo "${pUsername} its working"
             } else {
                 echo "username is empty"
 
             }
             
         }
-
-
-
-
-
-
-
     }
-
-
-
-
+}
 }
 
+managejenkins("${ACTION}", "${USERNAME}")
