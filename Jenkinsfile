@@ -27,24 +27,20 @@ def checkoutRepo(){
 
 def managejenkins(String pAction, String pUserID, String pUsername){
 
-  password_generate(){
-    def allChars = [ 'A'..'Z', 'a'..'z', '0'..'9' ].flatten() - [ 'O', '0', 'l', '1', 'I' ]
-    def password = ""
-    def generatePassword = { length ->
-     (0..<length).collect { password = password + allChars[ new Random().nextInt( allChars.size() ) ] }
-        }
-    generatePassword(15)
-    return password
-
- }
 
 node(){
     stage('ManageJenkins'){
+        def allChars = [ 'A'..'Z', 'a'..'z', '0'..'9' ].flatten() - [ 'O', '0', 'l', '1', 'I' ]
+        def generatePassword = { length ->
+         (0..<length).collect { password = password + allChars[ new Random().nextInt( allChars.size() ) ] }
+         }
+
         if (pAction == 'Create_JenkinsUser') {
             if (pUserID){
                 List user = pUserID.split(',')
                 for (int i = 0; i < user.size(); i++) {
-		         def password = password_generate()
+                 def password = ""
+                 generatePassword(15)
                  def instance = jenkins.model.Jenkins.instance
                  def existingUser = instance.securityRealm.allUsers.find {it.id == user[i]}
                  if (existingUser == null) {
