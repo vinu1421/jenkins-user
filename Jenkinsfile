@@ -30,7 +30,25 @@ node(){
     stage('ManageJenkins'){
         if (pAction == 'Create_JenkinsUser') {
             if (pUsername){
-                echo "${pUsername} its working"
+                List user = pUsername.split(',')
+                for (int i = 0; i < user.size(); i++) {
+		         def allChars = [ 'A'..'Z', 'a'..'z', '0'..'9' ].flatten() - [ 'O', '0', 'l', '1', 'I' ]
+                 def password = ""
+                 def generatePassword = { length ->
+                 (0..<length).collect { password = password + allChars[ new Random().nextInt( allChars.size() ) ] }
+                 }
+                 generatePassword(15)
+                 echo "Reseting password for ${user[i]}"
+                 def instance = jenkins.model.Jenkins.instance
+                 def existingUser = instance.securityRealm.allUsers.find {it.id == user[i]}
+                 if (existingUser == null) {
+                     def user = instance.securityRealm.createAccount(user[i], password)
+                     user.setFullName(fullname)
+                     echo 'user created successfully'
+                    } else {
+                     echo 'User already present'
+                    }
+                }
             } else {
                 echo "username is empty"
 
