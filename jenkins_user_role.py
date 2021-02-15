@@ -5,8 +5,8 @@ import json
 
 
 
-user_file = open("jenkins/jenkins_user.json", "r")
-role_file = open("jenkins/jenkins_roles.json", "r")
+user_file = open("./jenkins_user.json", "r")
+role_file = open("./jenkins_roles.json", "r")
 jenkins_role = json.load(role_file)
 jenkins_user = json.load(user_file)
 user_file.close()
