@@ -4,19 +4,12 @@ import hudson.security.*
 properties([
  [$class: 'JiraProjectProperty'],
  parameters([
- choice(choices: ['Donothing', 'Create_JenkinsUser', 'Reset_UserPassword', 'Update_JenkinsRoles', 'Update_JenkinsUsers'],
+ choice(choices: ['Create_JenkinsUser', 'Reset_UserPassword', 'Update_JenkinsRoles', 'Update_JenkinsUsers'],
  description: 'Choose your action', name: 'ACTION'),
- string(defaultValue: '', description: 'Enter username', name: 'UserID', trim: false),
- string(defaultValue: '', description: 'Enter username', name: 'USERNAME', trim: false)
+ string(defaultValue: '', description: 'Enter userid. Need only when creating and resetting users.', name: 'UserID', trim: false),
+ string(defaultValue: '', description: 'Enter username. Optional, need only when creating new users', name: 'USERNAME', trim: false)
  ])
 ])
-
-withCredentials([
-    string(credentialsId: 'a0770140-62a2-42d4-b128-e944758d26bc', variable: 'Jadmin'),
-    string(credentialsId: '67913044-b261-470e-b93c-f5d863181c0f', variable: 'Jpassword')
-    ]) {
-    // some block
-}
 
 def checkoutRepo(){
 
