@@ -86,6 +86,12 @@ node(){
             }
         } else {
             checkoutRepo()
+            withCredentials([
+            string(credentialsId: 'a0770140-62a2-42d4-b128-e944758d26bc', variable: 'Jadmin'),
+            string(credentialsId: '67913044-b261-470e-b93c-f5d863181c0f', variable: 'Jpassword')
+             ]) {
+             // some block
+            }
             sh 'python3 jenkins_user_role.py'
 
         }
