@@ -79,7 +79,7 @@ node(){
             }
         } else {
             checkoutRepo()
-            sh 'python3 jenkins/jenkins_user_role.py'
+            sh 'python3 jenkins_user_role.py'
 
         }
     }
