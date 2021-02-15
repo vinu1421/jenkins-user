@@ -16,6 +16,7 @@ action = os.getenv("ACTION")
 Jusername = os.getenv("Jadmin")
 Jpassword = os.getenv("Jpassword")
 print(Jusername, Jpassword)
+'''
 rs = RoleStrategy('http://localhost:8080', 	Jusername, Jpassword, ssl_verify=False, ssl_cert=None)
 
 
@@ -116,3 +117,4 @@ elif action == 'Update_JenkinsUsers':
 else:
     print('No action selected')
 
+'''
