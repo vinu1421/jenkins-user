@@ -13,7 +13,7 @@ user_file.close()
 role_file.close()
 
 action = os.getenv("ACTION")
-rs = RoleStrategy('http://localhost:8080', 'username', 'password', ssl_verify=False, ssl_cert=None)
+rs = RoleStrategy('http://localhost:8080', 'vi1421', 'bigf1shvi1421', ssl_verify=False, ssl_cert=None)
 
 
 
