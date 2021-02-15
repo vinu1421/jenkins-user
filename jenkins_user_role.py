@@ -19,7 +19,7 @@ role_file.close()
 
 action = os.getenv("ACTION")
 
-rs = RoleStrategy('http://localhost:8080', 	Jusername, Jpassword, ssl_verify=False, ssl_cert=None)
+rs = RoleStrategy('http://localhost:8080', 	args.jenkinsuser, args.jenkinspass, ssl_verify=False, ssl_cert=None)
 
 
 
