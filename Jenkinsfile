@@ -92,7 +92,7 @@ node(){
              ]) {
              // some block
             }
-            sh 'python3 jenkins_user_role.py'
+            sh 'python3 jenkins_user_role.py --user ${Jadmin} --password ${Jpassword}'
 
         }
     }
