@@ -18,8 +18,7 @@ user_file.close()
 role_file.close()
 
 action = os.getenv("ACTION")
-print(args.jenkinsuser, args.jenkinspass, action)
-'''
+
 rs = RoleStrategy('http://localhost:8080', 	Jusername, Jpassword, ssl_verify=False, ssl_cert=None)
 
 
@@ -119,5 +118,3 @@ elif action == 'Update_JenkinsUsers':
       print('No user to unassign roles')
 else:
     print('No action selected')
-
-'''
