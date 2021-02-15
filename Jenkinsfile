@@ -44,6 +44,7 @@ node(){
         if (pAction == 'Create_JenkinsUser') {
             if (pUserID){
                 List user = pUserID.split(',')
+                List fullname = pUsername.split(',')
                 for (int i = 0; i < user.size(); i++) {
                  def password = GenerateRandomPassword()
                  def instance = jenkins.model.Jenkins.instance
@@ -52,7 +53,7 @@ node(){
                      echo "Creating user ${user[i]}"
                      def username = instance.securityRealm.createAccount(user[i], password)
                      if (pUsername) {
-                        username.setFullName(pUsername)
+                        username.setFullName(fullname[i])
                         }
                      echo "${user[i]} user created successfully, Password is ${password}"
                     } else {
