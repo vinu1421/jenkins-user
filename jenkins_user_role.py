@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 import os
+import argparse
 from pyjars import RoleStrategy, permission, Role
 import json
 
 
+parser = argparse.ArgumentParser(description='Export jenkins admin user credentials as arguments')
+parser.add_argument('--user', metavar='u', type=str, help='specify a mongo host', dest='jenkinsuser')
+parser.add_argument('--password', metavar='p', type=str, help='specify a mongo collection', dest='jenkinspass')
+args = parser.parse_args()
 
 user_file = open("./jenkins_user.json", "r")
 role_file = open("./jenkins_roles.json", "r")
@@ -13,7 +18,7 @@ user_file.close()
 role_file.close()
 
 action = os.getenv("ACTION")
-print(user, password, action)
+print(args.jenkinsuser, args.jenkinspass, action)
 '''
 rs = RoleStrategy('http://localhost:8080', 	Jusername, Jpassword, ssl_verify=False, ssl_cert=None)
 
