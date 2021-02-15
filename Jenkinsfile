@@ -77,6 +77,10 @@ node(){
             } else {
                 echo "ERROR - userid is empty"
             }
+        } else {
+            checkoutRepo()
+            sh 'python jenkins/jenkins_user_role.py'
+
         }
     }
 }
