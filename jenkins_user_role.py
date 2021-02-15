@@ -13,8 +13,8 @@ user_file.close()
 role_file.close()
 
 action = os.getenv("ACTION")
-Jusername = os.getenv("admin_username")
-Jpassword = os.getenv("admin_password")
+Jusername = os.getenv("Jadmin")
+Jpassword = os.getenv("Jpassword")
 rs = RoleStrategy('http://localhost:8080', 	Jusername, Jpassword, ssl_verify=False, ssl_cert=None)
 
 
